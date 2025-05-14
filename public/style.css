@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 body {
     background-color: #121212;
     color: white;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bolder;
 }
 
 .sidebar {
@@ -70,21 +74,21 @@ body {
     min-width: 20vw;
 }
 
-.games {
+.apps {
     display: none;
 }
 
-#games {
+#apps {
     margin-left: 250px;
     display: none; 
     transition: margin-left 0.3s; 
 }
 
-.sidebar.collapsed + #games {
+.sidebar.collapsed + #apps {
     margin-left: 80px;
 }
 
-#games.with-sidebar {
+#apps.with-sidebar {
     display: block; 
 }
 
@@ -92,3 +96,74 @@ body {
     border: 2px solid white;
     border-radius: 10px;
 }
+
+.ui-input-container {
+    position: relative;
+    width: 300px;
+  }
+  
+  .ui-input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    font-size: 1em;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background-color: transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .ui-input:focus {
+    border-color: #6c63ff;
+  }
+  
+  .ui-input-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #6c63ff;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  
+  .ui-input:focus + .ui-input-underline {
+    transform: scaleX(1);
+  }
+  
+  .ui-input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgba(108, 99, 255, 0.1);
+    transition: width 0.3s;
+  }
+  
+  .ui-input:focus ~ .ui-input-highlight {
+    width: 100%;
+  }
+  
+  .ui-input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    transition: color 0.3s;
+  }
+  
+  .ui-input:focus ~ .ui-input-icon {
+    color: #6c63ff;
+  }
+  
+  .ui-input-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ui-input {
+    color: white;
+  }
