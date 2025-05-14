@@ -17,8 +17,7 @@
     <div class="sidebar" id="sidebar">
         <button class="btn btn-outline-light toggle-btn" id="toggleBtn"><i class="fas fa-bars"></i></button><br><br>
         <a href="#" id="departTab"><i class="fas fa-plane icon"></i><span class="text">Depart</span></a>
-        <a href="#" id="gamesTab"><i class="fa-solid fa-dice-five"></i><span class="text">Games</span></a>
-        <a href="#"><i class="fas fa-th-large icon"></i><span class="text">Apps</span></a>
+        <a href="#" id="appsTab"><i class="fas fa-th-large icon"></i><span class="text">Apps</span></a>
         <a href="#"><i class="fas fa-cog icon"></i><span class="text">Settings</span></a>
         <a href="#" id="panic"><i class="fas fa-exclamation-triangle icon"></i><span class="text">Panic</span></a>
     </div>
@@ -31,10 +30,29 @@
                 <div class="form">
                     <form id="form">
                         <div class="mb-3">
-                            <label for="input" class="form-label text-white">Where would you like to go?</label>
                             <div class="row">
                                 <div class="col-12">
-                                    <input type="text" class="form-control input w-100" id="input" placeholder="Enter your destination..." required>
+                                    <div class="ui-input-container">
+                                        <input
+                                          required=""
+                                          placeholder="Input your destination..."
+                                          class="ui-input"
+                                          type="text"
+                                        />
+                                        <div class="ui-input-underline"></div>
+                                        <div class="ui-input-highlight"></div>
+                                        <div class="ui-input-icon">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <path
+                                              stroke-linejoin="round"
+                                              stroke-linecap="round"
+                                              stroke-width="2"
+                                              stroke="currentColor"
+                                              d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                                            ></path>
+                                          </svg>
+                                        </div>
+                                      </div>
                                 </div>
                             </div>
                         </div>
@@ -48,15 +66,14 @@
         </div>
     </div>
 
-    <div class="games" id="games">
+    <div class="apps" id="apps">
         <div class="container">
             <div class="d-flex justify-content-center align-items-center flex-column game" style="min-height: 60vh;">
-                <h1 class="text-white text-center">Games</h1>
+                <h1 class="text-white text-center">Apps</h1>
                 <div class="tiles">
                     <div class="tile">
                         <div class="tile-content">
-                            <img src="./img/paper.jpg" alt="Paper.io">
-                            <h2>Paper.io</h2>
+                            
                         </div>
                     </div>
                 </div>
