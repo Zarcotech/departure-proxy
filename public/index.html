@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <div class="navbar">
         <button class="icon-only" title="Home" id="homeTab">
@@ -23,75 +25,130 @@
         <h1 class="title">Departure</h1>
         <input type="text" placeholder="Enter your destination..." class="input" />
         <p>Phantom's fastest proxy.</p>
-        <br><br>
-        <h6>Note: This is experimental. Please report any bugs or issues in our Discord server.</h6>
+        <br /><br />
+        <h6>
+            Note: This is experimental. Please report any bugs or issues in
+            our Discord server.
+        </h6>
     </div>
-    
+
     <div class="settings" id="settings">
+
+        <div class="notification" id="notification">
+            <i class="fa-solid fa-bell"> </i>
+            <p>Wisp server has been reset! </p>
+            <button class="notification-close" id="close">
+                <i class="fa-solid fa-xmark close"> </i>
+            </button>
+        </div>
+        <div class="notificationsave" id="notificationSave">
+            <i class="fa-solid fa-bell"></i>
+            <p>Wisp server settings is saved!</p>
+            <button class="notification-close" id="closeSave">
+                <i class="fa-solid fa-xmark close"></i>
+            </button>
+        </div>
         <div class="settings-sidebar">
             <div class="sidebar" id="settingsSidebar">
-                <button class="icon-only" title="General Settings" id="generalSettingsTab">
-                    <i class="fa-solid fa-sliders"></i>
+                <button class="icon-only" title="Proxy" id="proxyTab">
+                    <i class="fa-solid fa-sliders"></i>&nbsp;
+                    <span>Proxy</span>
                 </button>
                 <button class="icon-only" title="Themes" id="themesTab">
-                    <i class="fa-solid fa-palette"></i> 
+                    <i class="fa-solid fa-palette"></i>&nbsp;
+                    <span>Themes</span>
                 </button>
-                <button class="icon-only" title="About" id="aboutTab">
-                    <i class="fa-solid fa-circle-info"></i> Credits
+                <button class="icon-only" title="Credits" id="creditsTab">
+                    <i class="fa-solid fa-circle-info"></i>&nbsp;
+                    <span>Credits</span>
                 </button>
             </div>
         </div>
         <h1 class="title">Settings</h1>
-        <div class="proxy">
-            <h2>Proxy</h2>
+        <div class="proxy" id="proxy">
+
             <div class="switch">
                 <div class="selection">
                     <label for="switcher">Proxy switcher</label>
-                    <br>
-                    <select name="switcher" id="switcher" class="selector">
-                        <option value="ultraviolet">Ultraviolet</option>
-                        <option value="scramjet">Scramjet</option>
+                    <br />
+                    <select name="switcher" id="switcher" class="selector" style="color: white">
+                        <option value="ultraviolet" class="choice">
+                            Ultraviolet
+                        </option>
+                        <option value="scramjet" class="choice">
+                            Scramjet
+                        </option>
                     </select>
                 </div>
-                <br>
+                <br />
                 <div class="selection">
                     <label for="switcher">Transport</label>
-                    <br>
-                    <select name="switcher" id="switcher" class="selector">
-                        <option value="libcurl">Libcurl</option>
-                        <option value="epoxy">Epoxy</option>
+                    <br />
+                    <select name="switcher" id="switcher" class="selector" style="color: white">
+                        <option value="libcurl" class="choice" style="color: white">
+                            Libcurl
+                        </option>
+                        <option value="epoxy" class="choice" style="color: white">
+                            Epoxy
+                        </option>
                     </select>
                 </div>
-                <br>
+                <br />
                 <div class="selection">
                     <label for="switcher">Search Engine</label>
-                    <br>
-                    <select name="switcher" id="switcher" class="selector">
-                        <option value="duuckduckgo">DuckDuckGo</option>
-                        <option value="bing">Bing</option>
+                    <br />
+                    <select name="switcher" id="switcher" class="selector" style="color: white">
+                        <option value="duckduckgo" class="choice" style="color: white">
+                            DuckDuckGo
+                        </option>
+                        <option value="bing" class="choice" style="color: white">
+                            Bing
+                        </option>
                     </select>
                 </div>
             </div>
-            <br>
+            <br />
             <div class="wisp-server-form">
                 <label for="wisp-server">Wisp Server</label>
-                <br>
+                <br />
                 <input type="text" id="wisp-server" class="input" placeholder="wss://anura.pro/" />
-                <br><br>
-                <button class="stylebtn"><i class="fas fa-save"></i> Save proxy settings</button>
-                <button class="stylebtn"><i class="fa-solid fa-rotate"></i> Restart</button>
+                <br /><br />
+                <button class="stylebtn" id="saveBtn">
+                    <i class="fas fa-save"></i> Save proxy settings
+                </button>
+                <button class="stylebtn" id="reset" onclick="showNotiReset()">
+                    <i class="fa-solid fa-rotate"></i> Reset
+                </button>
+                <br />
+
             </div>
         </div>
-        <br><br><br>
-        <div class="themes">
-            <h2>Themes</h2>
+        <br /><br /><br />
+        <div class="themes" id="themes">
             <div class="theme-desc">
                 <div class="light">
-                    <img src="" alt="light">
+                    <label for="light_theme" onclick="lightTheme()">Light theme:</label>
+                    <br />
+                    <img src="./img/light.png" alt="light" name="light_theme" onclick="lightTheme()" />
                 </div>
             </div>
+        </div>
+        <div class="credits" id="credits" style="display: none">
+            <p>
+                Frontend Development:
+                <a href="https://zarcotech.xyz" target="_blank">Zarcotech</a>
+            </p>
+            <p>
+                Backend Development:
+                <a href="https://dyamuh.com" target="_blank">dyamuh</a>
+            </p>
+            <p>
+                Hosted by:
+                <a href="https://github.com/Phantom-Proxies" target="_blank">Phantom Network</a>
+            </p>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
