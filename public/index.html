@@ -1,98 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Departure Proxy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #20242b;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .navbar {
-            display: inline-flex;
-            background-color: #2c3e50;
-            border-radius: 25px;
-            padding: 8px 16px;
-            margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .icon-only {
-            background: none;
-            border: none;
-            margin: 0 8px;
-            padding: 10px;
-            cursor: pointer;
-            color: #ecf0f1;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s, color 0.2s;
-            border-radius: 50%;
-        }
-
-        .icon-only:hover {
-            background-color: #34495e;
-            color: #fff;
-        }
-
-        .icon-only[title]:hover::after {
-            content: attr(title);
-            position: absolute;
-            top: 50%;
-            left: calc(100% + 10px);
-            transform: translateY(-50%);
-            background-color: #34495e;
-            color: #fff;
-            padding: 4px 8px;
-            border-radius: 4px;
-            white-space: nowrap;
-            font-size: 14px;
-            pointer-events: none;
-        }
-
-        .content {
-            margin-top: 40px;
-            width: 80%;
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .title {
-            color: white;
-        }
-
-        .input {
-            border-radius: 16px;
-            width: 33vw;
-            height: 5vh;
-            border: none;
-            color: white;
-            background-color: #15394a;
-            padding-left: 15px;
-            font-size: 1em;
-        }
-        .settings {
-            display: none;
-        }
-        .content {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
     <div class="navbar">
         <button class="icon-only" title="Home" id="homeTab">
@@ -108,11 +22,76 @@
     <div class="content" id="content">
         <h1 class="title">Departure</h1>
         <input type="text" placeholder="Enter your destination..." class="input" />
+        <p>Phantom's fastest proxy.</p>
+        <br><br>
+        <h6>Note: This is experimental. Please report any bugs or issues in our Discord server.</h6>
     </div>
+    
     <div class="settings" id="settings">
-
+        <div class="settings-sidebar">
+            <div class="sidebar" id="settingsSidebar">
+                <button class="icon-only" title="General Settings" id="generalSettingsTab">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+                <button class="icon-only" title="Themes" id="themesTab">
+                    <i class="fa-solid fa-palette"></i> 
+                </button>
+                <button class="icon-only" title="About" id="aboutTab">
+                    <i class="fa-solid fa-circle-info"></i> Credits
+                </button>
+            </div>
+        </div>
+        <h1 class="title">Settings</h1>
+        <div class="proxy">
+            <h2>Proxy</h2>
+            <div class="switch">
+                <div class="selection">
+                    <label for="switcher">Proxy switcher</label>
+                    <br>
+                    <select name="switcher" id="switcher" class="selector">
+                        <option value="ultraviolet">Ultraviolet</option>
+                        <option value="scramjet">Scramjet</option>
+                    </select>
+                </div>
+                <br>
+                <div class="selection">
+                    <label for="switcher">Transport</label>
+                    <br>
+                    <select name="switcher" id="switcher" class="selector">
+                        <option value="libcurl">Libcurl</option>
+                        <option value="epoxy">Epoxy</option>
+                    </select>
+                </div>
+                <br>
+                <div class="selection">
+                    <label for="switcher">Search Engine</label>
+                    <br>
+                    <select name="switcher" id="switcher" class="selector">
+                        <option value="duuckduckgo">DuckDuckGo</option>
+                        <option value="bing">Bing</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="wisp-server-form">
+                <label for="wisp-server">Wisp Server</label>
+                <br>
+                <input type="text" id="wisp-server" class="input" placeholder="wss://anura.pro/" />
+                <br><br>
+                <button class="stylebtn"><i class="fas fa-save"></i> Save proxy settings</button>
+                <button class="stylebtn"><i class="fa-solid fa-rotate"></i> Restart</button>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="themes">
+            <h2>Themes</h2>
+            <div class="theme-desc">
+                <div class="light">
+                    <img src="" alt="light">
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
