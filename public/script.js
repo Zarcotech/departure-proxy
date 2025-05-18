@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("themesTab").addEventListener("click", () => {
         document.getElementById("proxy").style.display = "none";
-        document.getElementById("themes").style.display = "block";
+        document.getElementById("themes").style.display = "flex";
         document.getElementById("credits").style.display = "none";
     })
 
@@ -32,6 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     document.getElementById("saveBtn").addEventListener("click", showNotiSave);
+
+    const defaultThemeBtn = document.getElementById("defaultThemeBtn");
+    if (defaultThemeBtn) {
+        defaultThemeBtn.addEventListener("click", defualtTheme);
+    }
+    const lightThemeBtn = document.getElementById("lightThemeBtn");
+    if (lightThemeBtn) {
+        lightThemeBtn.addEventListener("click", lightTheme);
+    }
 })
 
 function showNotiReset() {
@@ -49,24 +58,45 @@ function showNotiSave() {
 
 document.getElementById("close").addEventListener("click", () => {
     document.getElementById("notification").style.display = "none";
-})
-
-document.getElementById("closeSave").addEventListener("click", () => {
-    document.getElementById("notificationSave").style.display = "none";
     document.body.classList.remove("noscroll");
 });
 
-function lightTheme(){
-    document.body.style.backgroundColor = "white";
-    document.body.style.color = "#20242b";    
+function defualtTheme() {
+    fetch('/themes')
+        .then(response => response.json())
+        .then(data => {
+            if (data && Array.isArray(data.themes) && data.themes.length > 0) {
+                const theme = data.themes[0];
+                document.body.style.setProperty('--theme-bg', theme.background);
+                document.body.style.setProperty('--theme-color', theme.color);
+            }
+        });
 }
 
-const sidebar2 = document.getElementById("settingsSidebar");
-if (sidebar2) {
-    sidebar2.addEventListener("mouseenter", () => {
-        document.body.classList.add("noscroll");
-    });
-    sidebar2.addEventListener("mouseleave", () => {
-        document.body.classList.remove("noscroll");
-    });
+function lightTheme() {
+    fetch('/themes')
+        .then(response => response.json())
+        .then((data) => {
+            if (data && Array.isArray(data.themes) && data.themes.length > 1) {
+                const theme = data.themes[1];
+                document.body.style.setProperty('--theme-bg', theme.background);
+                document.body.style.setProperty('--theme-color', theme.color);
+            }
+        });
 }
+
+function darkTheme() {
+    fetch('/themes')
+        .then(response => response.json())
+        .then(data => {
+            if (data && Array.isArray(data.themes) && data.themes.length > 0) {
+                const theme = data.themes[0];
+                document.body.style.setProperty('--theme-bg', theme.background);
+                document.body.style.setProperty('--theme-color', theme.color);
+            }
+        });
+}
+
+darkTheme();
+
+document.body.classList.add("noscroll");

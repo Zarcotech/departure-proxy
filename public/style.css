@@ -3,8 +3,8 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #20242b;
-    color: white;
+    background-color: var(--theme-bg, #20242b);
+    color: var(--theme-color, white);
     min-height: 100vh;
     height: 100vh;
     width: 100vw;
@@ -148,7 +148,10 @@ body {
 }
 
 .themes {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #settings-sidebar button{
@@ -204,4 +207,35 @@ a  {
 
 body.noscroll {
     overflow: hidden;
+}
+
+img {
+    border: #15394a 2px solid;
+}
+
+.mythemes {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 32px;
+}
+
+.theme-desc > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
 }

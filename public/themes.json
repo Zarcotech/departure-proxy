@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Defualt",
+        "color": "white",
+        "background": "#20242b"
+    },
+    {
+        "name": "Dark",
+        "color": "#ffffff",
+        "background": "#000000"
+    },
+    {
+        "name": "Light",
+        "color": "#000000",
+        "background": "#ffffff"
+    },
+    {
+        "name": "Blue",
+        "color": "#ffffff",
+        "background": "#007bff"
+    },
+    {
+        "name": "Green",
+        "color": "#ffffff",
+        "background": "#28a745"
+    },
+    {
+        "name": "Red",
+        "color": "#ffffff",
+        "background": "#dc3545"
+    },
+    {
+        "name": "Yellow",
+        "color": "#000000",
+        "background": "#ffc107"
+    },
+    {
+        "name": "Purple",
+        "color": "#ffffff",
+        "background": "#6f42c1"
+    },
+    {
+        "name": "Pink",
+        "color": "#000000",
+        "background": "#e83e8c"
+    },
+    {
+        "name": "Orange",
+        "color": "#000000",
+        "background": "#fd7e14"
+    }
+]

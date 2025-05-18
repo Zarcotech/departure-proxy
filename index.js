@@ -20,4 +20,8 @@ app.get('/panic', (req, res) => {
     res.redirect('https://www.google.com');
 })
 
+app.get('/themes', (req, res) => {
+    res.sendFile(join(__dirname, 'public', 'themes.json'));
+})
+
 app.listen(3000);
